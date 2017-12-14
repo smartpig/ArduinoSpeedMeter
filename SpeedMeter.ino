@@ -1,7 +1,7 @@
 //Bluetooth Internet Speed Meter
 
-int maxmbps = 75;
-int currentmbps = 75;
+int maxmbps = 900;
+int currentmbps = 700;
 int maxvolt = 255;
 static int meterpin = 9;
 static int bufsiz = 8;
@@ -13,7 +13,7 @@ void setup() {
   Serial.begin(9600);
   //set timeout to stop reading in milliseconds
   //Serial.setTimeout(1000);
-  analogWrite(meterpin, 250);  
+  analogWrite(meterpin, 250);
 }
 
 void loop() {
@@ -22,7 +22,7 @@ if (Serial.available() > 0) {
 
      //get serial data for speed
     currentmbps=serialreadvalue();
-    
+
 //    if (Serial.read() == '\n') {
 
     // if Current Speed is greater than max speed, set meter to max
